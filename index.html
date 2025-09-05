@@ -1,0 +1,67 @@
+<!doctype html>
+<html><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>HeartSound Tutor</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>HeartSound Tutor</h1>
+    <div class="controls">
+      <button id="btn-random">Random</button>
+      <label><input type="checkbox" id="chk-filter" checked> limit to checked categories</label>
+    </div>
+  </header>
+
+  <main class="grid">
+    <!-- LEFT: player + teach -->
+    <section class="panel">
+      <h2 class="h">Player</h2>
+      <div id="current-title" class="muted">—</div>
+      <div id="current-buzz" class="buzz">—</div>
+      <audio id="player" controls preload="metadata"></audio>
+
+      <h2 class="h" style="margin-top:1rem">Teach</h2>
+      <div id="teach" class="teach">Select a sound above.</div>
+    </section>
+
+    <!-- RIGHT: catalog -->
+    <section class="panel">
+      <h2 class="h">Catalog</h2>
+
+      <details open>
+        <summary>
+          <span>Systolic murmurs</span>
+          <label class="tag"><input class="cat-check" data-cat="systolic" type="checkbox" checked> include in Random</label>
+        </summary>
+        <ul id="list-systolic" class="list"></ul>
+      </details>
+
+      <details>
+        <summary>
+          <span>Diastolic murmurs</span>
+          <label class="tag"><input class="cat-check" data-cat="diastolic" type="checkbox" checked> include in Random</label>
+        </summary>
+        <ul id="list-diastolic" class="list"></ul>
+      </details>
+
+      <details>
+        <summary>
+          <span>Congenital / others</span>
+          <label class="tag"><input class="cat-check" data-cat="congenital" type="checkbox" checked> include in Random</label>
+        </summary>
+        <ul id="list-congenital" class="list"></ul>
+      </details>
+
+      <details>
+        <summary>
+          <span>Extra sounds</span>
+          <label class="tag"><input class="cat-check" data-cat="extra" type="checkbox" checked> include in Random</label>
+        </summary>
+        <ul id="list-extra" class="list"></ul>
+      </details>
+    </section>
+  </main>
+
+  <script src="js/app.js" defer></script>
+</body></html>
